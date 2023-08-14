@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+ <main class="main">
+        <section class="header">
+            <a href="#" class="logo">SKUIX.</a>
+        </section>
+
+    <div class="container">
+
+        <section class="quizSection">
+            <div class="quizBox">
+                <h1>SKUIX</h1>
+                    <div class="quizHeader">
+                        <span>Quiz Questions</span>
+                        <span class="headerScore">Score: 0 / 10 </span>
+                    </div>
+                  <h2 class="questionText">
+                    Which of the following is the capital of Turkey?
+                  </h2>
+                  <div class="optionList">
+                    <div class="option">
+                        <span>A. Baku</span>
+                    </div>
+                    <div class="option">
+                        <span>B. Canberra</span>
+                    </div>
+                    <div class="option">
+                        <span>C. Istanbul</span>
+                    </div>
+                    <div class="option">
+                        <span>D. Berlin</span>
+                    </div>
+                  </div>  
+                  <div class="quizFooter">
+                    <span class="questionTotal">1 of 10 Questions</span>
+                    <button class="nextButton">Next Question</button>
+                  </div>
+            </div>
+            <div class="resultBox">
+                <h2>Quiz Report...</h2>
+                <div class="percentageContainer">
+                    <div class="circularProgress">
+                        <span class="progressValue">
+                            0%
+                        </span>
+                    </div>
+                    <span class="scoreText">
+                            Your Got 0 out of 10
+                    </span>
+                </div>
+                <div class="buttons">
+                    <button class="tryAgainButton">Try Again</button>
+                    <button class="goBackButton">Go Back</button>
+                </div>
+              </div>
+        </section>
+        
+        <section class="home">
+            <div class="homeContent">
+                <h1>Quiz Page</h1>
+                <p>Introducing our interactive and engaging <span style="color: rgb(0, 26, 31); font-weight: 800; font-size: 25px;">SKUIX</span> app - your go-to destination for fun and educational quizzes! 
+                   Unleash your knowledge and challenge yourself with a diverse range of quizzes that cover a wide array of topics. 
+                   Whether you're a trivia enthusiast, a curious learner, or simply looking for a way to pass the time while boosting your brainpower, our Quiz App has something for everyone.</p>
+                <button class="startButton">Lets Start</button>
+            </div>
+        </section>
+    </div>
+ </main> 
+
+    <div class="popupInfo" id="popupInfo">
+            <h2>Quiz Guide</h2>
+            <span class="info">1. Read Questions Carefully.</span><br>
+            <span class="info">2. Answer what you know.</span><br>
+            <span class="info">3. Consider all the options.</span><br>
+            <span class="info">4. Stay focused.</span><br>
+            <span class="info">5. Learn from mistakes.</span>
+
+            <div class="buttonGroup">
+                <button class="infoButton exitButton">Leave Quiz</button>
+                <a href="#" class="infoButton continueButton">Continue</a>
+            </div>
+    </div>
+
+    <script src="scrript.js"></script>
+</body>
+</html>

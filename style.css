@@ -1,0 +1,414 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+body{
+    color: #fff;
+    background: #9cd4e2;
+    overflow: hidden;
+}
+.logo{
+    font-size: 32px;
+    font-weight: 700;
+    color: #fff;
+    text-decoration: none;
+    background: transparent;
+    transition: .5s;
+    margin-left: 125px;
+    filter: drop-shadow(0 0 5px #fff);
+}
+.logo:hover{
+    color: rgba(14,158,187);
+    letter-spacing: 2px;
+}
+.main{
+    background: linear-gradient(105deg, rgb(8, 36, 87), rgb(14, 158, 187));
+    min-height: 100vh;
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    pointer-events: auto;
+    transition: .5s ease;
+}
+.main.active{
+    filter: blur(10px);
+    pointer-events: none;
+}
+.container{
+    display: flex;
+    height: 100vh;
+    width: 200%;
+}
+.home{
+    width: 100%;
+    position: relative;
+    left: -50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.homeContent{
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.homeContent h1{
+    font-size: 60px;
+    font-weight: 700;
+    text-shadow: 0 0 10px rgba(22, 216, 255, 0.863);
+}
+.homeContent p{
+    font-size: 20px;
+    text-align: center;
+    text-shadow: 0 0 10px rgb(7, 252, 231);
+    margin-bottom: 30px;
+    margin-top: 10px;
+}
+.homeContent .startButton{
+    width: 170px;
+    height: 55px;
+    background: linear-gradient(139deg,rgb(4, 218, 233),rgb(8,36, 87));
+    border: 2px solid #fff;
+    outline: none;
+    color: #fff;
+    border-radius: 6px;
+    box-shadow: 0 0 10px rgb(10, 110, 102) ;
+    letter-spacing: 2px;
+    font-size: 17px;
+    font-weight: 800;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+.homeContent .startButton:hover{
+    background: linear-gradient(139deg,rgb(8,36, 87),rgb(18, 211, 224)) ;
+    box-shadow: none;
+    letter-spacing: 3px;
+}
+.popupInfo{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(.9);
+    width: 500px;
+    background: linear-gradient(50deg,rgba(61, 110, 124, 0.788),rgb(6, 118, 146));
+    border-radius: 6px;
+    padding: 10px 25px;
+    border: 2px solid #fff;
+    opacity: 0;
+    pointer-events: none;
+    transition: .3s ease;
+}
+.popupInfo.active{
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(-50%, -50%) scale(1);
+
+}
+.popupInfo h2{
+    font-size: 50px;
+    color: #9cd4e2;
+    text-shadow: 0 0 10px rgb(44, 80, 77);
+}
+.popupInfo .info{
+    display: inline-block;
+    font-size: 16px;
+    color: #fff;
+    font-weight: 500;
+    margin: 5px 0;
+}
+.popupInfo .buttonGroup{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 2px solid #fff;
+    margin-top: 10px;
+    padding: 15px 0 7px;
+}
+.popupInfo .buttonGroup .infoButton{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 130px;
+    height: 45px;
+    background: linear-gradient(50deg,rgb(0, 89, 116),rgb(1, 95, 100));
+    border: 2px solid #fff;
+    outline: none;
+    border-radius: 6px;
+    font-size: 16px;
+    color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .5);
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: 500;
+    transition: .5s;
+}   
+.popupInfo .buttonGroup .infoButton:nth-child(1){
+    background: transparent;
+    color:rgb(230, 248, 252);
+}
+.popupInfo .buttonGroup .infoButton:nth-child(1):hover{
+    background: linear-gradient(50deg,rgba(27, 77, 92, 0.788),rgb(52, 146, 153));
+    color:rgb(155, 224, 228);
+    letter-spacing: 1.5px;
+}
+.popupInfo .buttonGroup .infoButton:nth-child(2):hover{
+    background: linear-gradient(50deg,rgba(51, 133, 158, 0.788),rgb(71, 127, 131));
+    color:rgb(3, 26, 26);
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+.quizSection{
+ width: 100%;
+ background: linear-gradient(55deg, rgb(14, 158, 187), rgb(8, 36, 87) 75%);   
+ position: relative;
+ left: -50%;
+ transition: .9s ease-in-out;
+ transition-delay: .3s;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ z-index: 100;
+}
+.quizSection.active{
+    left: 0;
+}
+.quizSection .quizBox{
+    position: relative;
+    width: 500px;
+    background: transparent;
+    border: 2px solid #fff;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 30px;
+    opacity: 0;
+    pointer-events: none;
+    transition: scale(0.9);
+}
+.quizSection .quizBox.active{
+    opacity: 1;
+    pointer-events: auto;
+    transform: scale(1.0);
+    transition: 2s ease;
+    transition-delay: 1s;
+}
+.quizBox h1{
+    font-size: 40px;
+    text-align: center;
+    background: linear-gradient(105deg,transparent, rgb(66, 104, 160), rgb(10, 84, 99),transparent);
+    border-radius: 6px;
+    animation: textBlink 5s infinite;
+}
+@keyframes textBlink {
+    0%, 100% {
+        content: "SKUIX";
+        color: #fff;
+        filter: drop-shadow(0 0 3px rgba(14,158,187));
+    }
+    25% {
+        content: "SKUIX";
+        color: #fff;
+        
+    }
+    50% {
+        content: "SKUIX";
+        filter: drop-shadow(0 0 3px #fff);
+        color: #fff;
+    }
+    75% {
+        content: "SKUIX";
+        filter: text-shadow(0 0 3px #fff);
+        color: #fff;
+    }
+}
+.quizBox .quizHeader{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    border-bottom: 2px solid #fff;
+    margin-bottom: 30px;
+}
+.quizHeader span{
+    font-size: 18px;
+    font-weight: 500;
+}
+.quizHeader .headerScore{
+    background: #06637c;
+    border-radius: 3px;
+    padding: 7px;
+}
+.quizBox .questionText{
+    font-size: 24px;
+    font-weight: 600;
+}
+.optionList .option{
+    width: 100%;
+    padding: 12px;
+    background: transparent;
+    border: 2px solid #fff;
+    font-size: 17px;
+    border-radius: 5px;
+    margin: 15px;
+    cursor: pointer;
+    transition: .5s;
+}
+.optionList .option:hover{
+    background: rgb(8, 55, 87);
+    background-color: rgb(8, 55, 87);
+}
+.optionList .option.correct{
+    border-color: rgb(108, 248, 15);
+    background: rgb(5, 245, 105);
+    color: black;
+    font-weight: 700;
+}
+.optionList .option.incorrect{
+    border-color: rgb(211, 39, 16);
+    background: rgb(207, 79, 47);
+    color: black;
+    font-weight: 700;
+}
+.optionList .option.disable{
+    pointer-events: none;
+}
+.quizBox .quizFooter{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 2px solid #fff;
+    padding-top: 20px;
+    margin-top: 20px;
+}
+.quizFooter .questionTotal{
+    font-size: 16px;
+    font-weight: 700;
+}
+.quizFooter .nextButton{
+    width: 100px;
+    height: 45px;
+    font-size: 17px;
+    font-weight: 600;
+    background: linear-gradient(105deg,rgb(10, 84, 99),transparent,transparent, rgb(40, 71, 117));
+    color: #fff;
+    border-radius: 6px;
+    border: 2px solid #fff;
+    cursor: pointer;
+    transition: .3s;
+    pointer-events: none;
+}
+
+.quizFooter .nextButton.active{
+    pointer-events: auto;
+    background: linear-gradient(55deg,transparent, rgb(40, 71, 117), rgb(10, 84, 99),transparent);
+    border-color: black;
+    color: black;
+    font-weight: 700;
+}
+.quizFooter .nextButton.active:hover{
+    pointer-events: auto;
+    background: linear-gradient(55deg,transparent, rgb(40, 71, 117), rgb(10, 84, 99),transparent);
+    border-color: #fff;
+    color: #fff;
+    letter-spacing: 1px;
+}
+.quizSection .resultBox{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(.9);
+    width: 500px;
+    background: transparent;
+    border: 2px solid #fff;
+    border-radius: 6px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transform: scale(0.9);
+    transition: .5s ease;
+}
+.quizSection .resultBox.active{
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(-50%, -50%) scale(1);
+}
+.resultBox h2{
+    font-size: 50px;
+}
+.resultBox .percentageContainer{
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #fff;
+    margin: 20px 0 40px;
+} 
+.percentageContainer .circularProgress{
+    position: relative;
+    width: 250px;
+    height: 250px;
+    background: conic-gradient(#fff 3.6deg,rgb(3, 107, 148) 0deg);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.percentageContainer .circularProgress::before{
+    content: '';
+    position: absolute;
+    width: 210px;
+    height: 210px;
+    background: rgb(8, 36, 87);
+    border-radius: 50%;
+}
+.circularProgress .progressValue{
+    position: relative;
+    font-size: 45px;
+    font-weight: 650;
+}
+.percentageContainer .scoreText{
+    font-size: 26px;
+    font-weight: 600;
+    margin-top: 20px;
+}
+.resultBox .buttons{
+    display: flex;
+
+}
+.buttons button{
+    width: 130px;
+    height: 45px;
+    font-size: 17px;
+    font-weight: 700;
+    background: transparent;
+    color: rgb(9, 17, 32);
+    border: 2px solid #fff;
+    border-radius: 6px;
+    outline: none;
+    margin: 0 20px 20px;
+    cursor: pointer;
+    transition: .3s ease-in-out;
+}
+.buttons button:nth-child(2){
+    background: transparent;
+    color: rgb(9, 17, 32);
+}
+.buttons button:nth-child(1):hover{
+    background: linear-gradient(105deg, rgb(8, 36, 87), rgb(14, 158, 187));
+    color: #fff;
+    width: 145px;
+}
+.buttons button:nth-child(2):hover{
+    background: linear-gradient(105deg, rgb(8, 36, 87), rgb(14, 158, 187));
+    color: #fff;
+    width: 145px;
+}
+
